@@ -25,6 +25,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     ]);
 
+    $id_utilisateur = $db->lastInsertId();
+
+    $stmt = $db->prepare("
+        INSERT INTO profils
+        (id_utilisateur, photo, description, likes, followers)
+        VALUES
+        (:id, :photo, :description, 0, 0)
+    ");
+
+    $stmt->execute([
+        ':id' => $id_utilisateur,
+        ':photo' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSqta2IJ3mdGZGeAYp4RrmM0LB6UKRt2PVShf_3Q5QYTC-ZYDSL4wFS6E&s=10',
+        ':description' => 'Ma description'
+    ]);
+
 }
 
 
