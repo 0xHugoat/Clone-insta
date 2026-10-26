@@ -4,8 +4,7 @@
     
     session_start();
 
-    $_SESSION['profil_id'] = 1;
-    $request = $db->query("SELECT utilisateurs.pseudo, profils.* FROM profils INNER JOIN utilisateurs ON profils.id_utilisateur = utilisateurs.id WHERE profils.id_utilisateur = ". (int)$_SESSION['profil_id']);
+    $request = $db->query("SELECT utilisateurs.pseudo, profils.* FROM profils INNER JOIN utilisateurs ON profils.id_utilisateur = utilisateurs.id WHERE profils.id_utilisateur = ". (int)$_SESSION['utilisateurs_id']);
     $user = $request->fetch();
 ?>
 <!DOCTYPE html>
@@ -27,7 +26,7 @@
         </div>
         <div>
             <?php
-                $request = $db->query('SELECT * FROM posts WHERE id_utilisateur = '. $_SESSION['profil_id']);
+                $request = $db->query('SELECT * FROM posts WHERE id_utilisateur = '. $_SESSION['utilisateurs_id']);
                 $posts = $request->fetchAll();
 
                 foreach ($posts as $post) {
