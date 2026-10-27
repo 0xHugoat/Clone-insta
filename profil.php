@@ -40,7 +40,12 @@
                     <p class="bold-text pseudo"><?php echo $user["pseudo"]; ?></p>
                     <div class="profil-user-stats">
                         <div>
-                            <p class="bold-text"><?php echo $user["likes"]; ?></p>
+                            <p class="bold-text"><?php 
+                                $request = $db->query('SELECT COUNT(id) FROM posts WHERE id_utilisateur = '. (int)$_SESSION['utilisateurs_id']);
+                                $nb_post = $request->fetch();
+                            
+                                echo $nb_post["COUNT(id)"]; 
+                            ?></p>
                             <p>Posts</p>
                         </div>
                         <div class="mid-stat">
