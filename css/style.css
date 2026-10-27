@@ -193,24 +193,50 @@ input:focus {
   box-sizing: border-box;
 }
 
-.modifierPhoto img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  margin-right: 20px;
-  object-fit: cover;
-}
-
-.modifierPhoto{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 65px;
-  background-color: #262626;
-  width: 40%;
-  border-radius: 20px;
-}
-
-.test{
+.test {
     display: flex;
     justify-content: center;
+}
+
+.modifierPhoto {
+    display: flex;
+    align-items: center;
+    background-color: #262626;
+    width: 40%;
+    padding: 20px 40px;
+    border-radius: 20px;
+    margin-bottom: 65px;
+    box-sizing: border-box;
+}
+
+.modifierPhoto img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 25px;
+    object-fit: cover;
+}
+
+.modifierPhoto h2 {
+    color: white;
+    font-size: 22px;
+    margin: 0;
+}
+
+.modifierPhoto input {
+    display: none;
+}
+
+.btnPhoto {
+    background-color: #4B5CFF;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.btnPhoto:hover {
+    background-color: #3949db;
 }
