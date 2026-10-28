@@ -39,6 +39,30 @@
             fetch("more_like.php");
         }
     }
+
+    function new_comm() {
+        let text = document.getElementsByClassName("texte")[0];
+        fetch("new_comm.php", {
+            method: "POST",
+            body : new URLSearchParams({
+                commentaire: text.value
+            })
+        });
+        text.value = "";
+    }
+
+    function chargerMessages() {
+        let result = document.getElementsByClassName("comments")[0];
+        
+        fetch("show_message.php")
+        .then(reponse => reponse.text())
+        .then(data => {
+            result.innerHTML = data;
+        })
+    }
+
+    setInterval(chargerMessages, 3000);
+    chargerMessages();
 </script>
 
 <body class="post">
@@ -61,8 +85,15 @@
                         <p><?php echo date('H:i:s d/m/Y', strtotime($post['date'])); ?></p>
                     </div>
                 </div>
-                <div class="commentaire">
+                <hr>
+                <div class="comment_area">
+                    <div class="comments">
 
+                    </div>
+                    <div class="write_comment">
+                        <input class="texte" type="text" name="message" placeholder="Ajoutez un commentaire...">
+                        <button class="submit" onclick="new_comm()">➤</button>
+                    </div>
                 </div>
             </div>
         </div>
