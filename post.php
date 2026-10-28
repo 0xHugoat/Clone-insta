@@ -61,6 +61,7 @@
                         <p><?php echo date('H:i:s d/m/Y', strtotime($post['date'])); ?></p>
                     </div>
                 </div>
+                <hr>
                 <div class="commentaire">
 
                 </div>

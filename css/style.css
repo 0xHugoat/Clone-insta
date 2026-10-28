@@ -133,6 +133,7 @@ body {
 
     .post-description-all {
         margin-left: 45px;
+        width: 70%;
     }
 
     .post-user {
@@ -144,8 +145,8 @@ body {
     img.user {
         width: 80px;
         height: 80px;
-        margin-right: 20px;
         border-radius: 50%;
+        margin-right: 20px;
         object-fit: cover;
     }
 
@@ -174,4 +175,8 @@ body {
         width: 100px;
     }
 
+    hr {
+        width: 50%;
+        margin-left: 0;
+    }
 }
