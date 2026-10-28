@@ -291,7 +291,6 @@ input:focus {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
     margin: 0;
-    overflow: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -428,6 +427,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .post {
     background-color: #0C1014;
+    overflow: hidden;
 
     p {
         color: white;
