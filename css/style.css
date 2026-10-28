@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+
+
 body {
   margin: 0;
   background-color: #0c1014;
@@ -117,6 +126,13 @@ hr {
   width: 40%;
   height: 50px;
   border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.enregistrerInformations input:hover{
+  background-color: #293491;
 }
 
 .bouttonRouge {
@@ -127,13 +143,24 @@ hr {
   margin-bottom: 65px;
 }
 
-.bouttonRouge input {
+.bouttonRouge a {
   background-color: #ff383c;
   color: white;
   width: 18.7%;
   height: 50px;
   border-radius: 10px;
   text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bouttonRouge a:hover{
+  cursor: pointer;
+  background-color: #a12527;
 }
 
 input {
@@ -168,6 +195,8 @@ input:focus {
   resize: none;
   outline: none;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
 }
 
 .mofidierPseudo {
@@ -182,7 +211,7 @@ input:focus {
   background-color: #0c1014;
   color: #939393;
   width: 40%;
-  height: 50px;
+  height: 57px;
   border-radius: 20px;
   border: 1px solid white;
   text-align: left;
@@ -191,6 +220,8 @@ input:focus {
   resize: none;
   outline: none;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
 }
 
 .test {
@@ -239,4 +270,24 @@ input:focus {
 
 .btnPhoto:hover {
     background-color: #3949db;
+}
+
+.titreSettings{
+  color: white;
+  display: flex;
+}
+
+.headTitreModif{
+  display: flex;
+  margin-left: 28.5%;
+  margin-top: 3%;
+}
+
+.headTitreModif img {
+  padding: 30px;
+}
+
+.modificationProfil{
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
 }
