@@ -24,11 +24,11 @@
 <body class="profil">
     <div id="menu" class="menu">
         <nav>
-            <a href="">Recherche</a>
-            <a href="#home">Acceuil</a>
-            <a href="">Mes likes</a>
-            <a href="#home">Profil</a>
-            <a href="#home">Créer</a>
+            <a class="menu_choices" href=""><p>Recherche</p></a>
+            <a class="menu_choices" href=""><img src="assets/Home.png" alt="home"><p>Acceuil</p></a>
+            <a class="menu_choices" href=""><p>Mes likes</p></a>
+            <a class="menu_choices" href=""><img src="assets/Profile.png" alt="home"><p>Profil</p></a>
+            <a class="menu_choices" href=""><img src="assets/Create.png" alt="home"><p>Créer</p></a>
         </nav>
     </div>
 
