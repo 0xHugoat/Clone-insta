@@ -38,6 +38,7 @@
                 <img class="image" src="<?php echo $user["photo"]; ?>" alt="image">
                 <div class="profil-user-pseudo">
                     <p class="bold-text pseudo"><?php echo $user["pseudo"]; ?></p>
+                    <a href="modification-profil.php"><img src="./assets/setting-lines 1.png" alt=""></a>
                     <div class="profil-user-stats">
                         <div>
                             <p class="bold-text"><?php 
