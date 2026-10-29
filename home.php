@@ -1,8 +1,9 @@
 <?php
 
-require_once("connexion_bdd/connexion.php");
+    require_once("connexion_bdd/connexion.php");
 
-session_start();
+    session_start();
+
 
     $request = $db->query("SELECT utilisateurs.pseudo, profils.* FROM profils INNER JOIN utilisateurs ON profils.id_utilisateur = utilisateurs.id WHERE profils.id_utilisateur = ". (int)$_SESSION['utilisateurs_id']);
     $user = $request->fetch();
@@ -32,12 +33,31 @@ if (isset($_GET["post"])) {
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
+<script>
+    function like(img) {
+        let postId = img.dataset.postId;
+
+        fetch("more_like_home.php?id_post=" + postId);
+        let nbLike = img.parentElement.querySelector(".nbLike");
+
+        let nb = parseInt(nbLike.textContent);
+
+        if (img.src.includes("Not-Like.png")) {
+            img.src = "assets/Like.png";
+            nbLike.textContent = (nb + 1) + " j'aime";
+        } else {
+            img.src = "assets/Not-Like.png";
+            nbLike.textContent = (nb - 1) + " j'aime";
+        }
+    }
+</script>
+
 <body class="home">
     <div id="menu" class="menu">
         <nav>
             <a class="menu_choices" href="./home.php"><img src="assets/Home.png" alt="home"><p>Acceuil</p></a>
             <a class="menu_choices" href="./profil.php"><img src="assets/Profile.png" alt="home"><p>Profil</p></a>
-            <a class="menu_choices" href=""><img src="assets/Create.png" alt="home"><p>Créer</p></a>
+            <a class="menu_choices" href="./create-post.php"><img src="assets/Create.png" alt="home"><p>Créer</p></a>
         </nav>
     </div>
 
@@ -108,7 +128,7 @@ if (isset($_GET["post"])) {
 
     <div class="publication">
 
-        <a href="?post=<?= (int)$post['id'] ?>" class="card-post">
+        <a href="?post=<?= (int)$post['id'] ?>" class="card-post-home">
             <img src="<?= htmlspecialchars($post['photo']) ?>" alt="Publication">
         </a>
 
@@ -125,9 +145,11 @@ if (isset($_GET["post"])) {
             </p>
 
             <img
+                data-post-id="<?= $post['id'] ?>"
                 class="likeImg"
                 src="assets/<?= $alreadyLike ? 'Like.png' : 'Not-Like.png' ?>"
                 alt="Like"
+                onclick="like(this)"
             >
 
             <p class="nbLike">
