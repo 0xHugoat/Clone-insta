@@ -10,6 +10,8 @@
 body {
   margin: 0;
   background-color: #0c1014;
+  color: white;
+  font-family: 'Inter', sans-serif;
 }
 
 .profil {
@@ -573,4 +575,176 @@ body::-webkit-scrollbar-thumb:hover {
             gap: 10px;
         }
     }
+}
+
+/* EN-TÊTE */
+
+.headMenu {
+    width: 850px;
+    max-width: 90%;
+    margin: 40px auto 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #393939;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headMenu h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.profil-user-stats {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.profil-user-stats h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.profil-user-stats div {
+    text-align: center;
+}
+
+.profil-user-stats p {
+    font-size: 15px;
+    margin: 0;
+}
+
+.profil-user-stats .bold-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* PUBLICATIONS */
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    padding-bottom: 60px;
+}
+
+.publication {
+    width: 500px;
+    max-width: 90%;
+}
+
+.card-post {
+    display: block;
+    width: 100%;
+}
+
+.card-post img {
+    display: block;
+    width: 100%;
+    height: 620px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* INFORMATIONS SOUS LA PHOTO */
+
+.publication-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.publication-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.publication-pseudo {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.likeImg {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.nbLike {
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.publication-date {
+    font-size: 13px;
+    color: #858585;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .headMenu {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profil-user-stats {
+        gap: 20px;
+    }
+
+    .publication {
+        width: 90%;
+    }
+
+    .card-post img {
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .publication-info {
+        flex-wrap: wrap;
+    }
+}
+
+.home {
+    
+
+    .menu {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        left: 20px;
+        height: 100vh;
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .menu_choices {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
 }
