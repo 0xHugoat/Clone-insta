@@ -24,9 +24,7 @@
 <body class="profil">
     <div id="menu" class="menu">
         <nav>
-            <a class="menu_choices" href=""><p>Recherche</p></a>
             <a class="menu_choices" href="./home.php"><img src="assets/Home.png" alt="home"><p>Acceuil</p></a>
-            <a class="menu_choices" href=""><p>Mes likes</p></a>
             <a class="menu_choices" href=""><img src="assets/Profile.png" alt="home"><p>Profil</p></a>
             <a class="menu_choices" href="create-post.php"><img src="assets/Create.png" alt="home"><p>Créer</p></a>
         </nav>

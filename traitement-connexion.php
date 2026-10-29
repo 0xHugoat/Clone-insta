@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['utilisateurs_id'] = $utilisateur['id'];
 
         // Rediriger vers l'accueil
-        header('Location: profil.php');
+        header('Location: home.php');
         exit();
 
     } else {
