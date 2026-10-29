@@ -12,7 +12,7 @@ if (!isset($_SESSION['utilisateurs_id'])) {
     exit();
 }
 
-$request = $db->query('SELECT * FROM posts');
+$request = $db->query('SELECT * FROM posts ORDER BY date DESC');
 $posts = $request->fetchAll();
 
 if (isset($_GET["post"])) {
