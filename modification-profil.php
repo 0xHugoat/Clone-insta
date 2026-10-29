@@ -19,6 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit("Veuillez remplir les champs obligatoires.");
     }
 
+    // Modifier image
+    $nom = $_FILES['modifierPhoto']['name'];
+    $tmp = $_FILES['modifierPhoto']['tmp_name'];
+    $destination = "uploads/" . $nom;
+
+    move_uploaded_file($tmp, $destination);
+
+    $request = $db->query("UPDATE profils SET photo = '$destination'");
+
     // Modifier le pseudo
     $sql = "UPDATE utilisateurs SET pseudo = :pseudo WHERE id = :id";
 
@@ -77,7 +86,7 @@ if (!$user_post) {
 <body>
     <div class="modificationProfil">
         <div class="headTitreModif">
-            <a href="./profil.php"><img src="./assets/Vector1.png" alt=""></a>
+            <a href="./profil.php"><img src="./assets/Vector.png" alt=""></a>
             <h1 class="titreSettings">Modifier le profil</h1>
         </div>
         <form action="modification-profil.php" method="POST" enctype="multipart/form-data">
