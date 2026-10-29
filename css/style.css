@@ -269,6 +269,9 @@ hr {
         width: 70%;
         margin-left: 45px;
     }
+    .post-user{
+        text-decoration: none;
+    }
     .post-user,
     .likeAndtime,
     .like,
