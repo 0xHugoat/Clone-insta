@@ -28,7 +28,7 @@
             <a class="menu_choices" href="./home.php"><img src="assets/Home.png" alt="home"><p>Acceuil</p></a>
             <a class="menu_choices" href=""><p>Mes likes</p></a>
             <a class="menu_choices" href=""><img src="assets/Profile.png" alt="home"><p>Profil</p></a>
-            <a class="menu_choices" href=""><img src="assets/Create.png" alt="home"><p>Créer</p></a>
+            <a class="menu_choices" href="create-post.php"><img src="assets/Create.png" alt="home"><p>Créer</p></a>
         </nav>
     </div>
 
@@ -70,11 +70,12 @@
 
                 foreach ($posts as $post) {
                     echo '
-                            <a href="?post='.$post["id"].'"  class="card-post">
+                            <a href="?post='.$post["id"].'" class="card-post">
                                 <img src="'. $post["photo"] .'" alt="image">
                             </a>
                     ';
                 }
+
             ?>
         </div>
     </section>
