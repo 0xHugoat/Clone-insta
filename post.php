@@ -9,8 +9,13 @@
 
     $request = $db->query('SELECT * FROM posts WHERE id = '. $_SESSION['id_post']);
     $post = $request->fetch();
-    $request = $db->query("SELECT profils.*, utilisateurs.pseudo FROM profils INNER JOIN utilisateurs ON profils.id_utilisateur = utilisateurs.id WHERE id_utilisateur = " . $post['id_utilisateur']);
+    $request = $db->query("SELECT profils.*, utilisateurs.pseudo, utilisateurs.id AS id_util FROM profils INNER JOIN utilisateurs ON profils.id_utilisateur = utilisateurs.id WHERE id_utilisateur = " . $post['id_utilisateur']);
     $user_post = $request->fetch();
+
+    if (isset($_GET["other"])) {
+        $_SESSION["id_other"] = (int)$_GET["other"];
+        header('Location: profil-other.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -71,10 +76,10 @@
         <div class="post_all">
             <img src="<?php echo $post["photo"]; ?>" alt="image" class="img_post">
             <div class="post-description-all">
-                <div class="post-user">
+                <a class="post-user" href="?other=<?php echo $user_post["id_util"]; ?>">
                     <img src="<?php echo $user_post["photo"]; ?>" alt="image" class="user">
                     <p><?php echo $user_post["pseudo"]; ?></p>
-                </div>
+                </a>
                 <div class="description-post">
                     <p><?php echo $post["description"]; ?></p>
                     <div class="likeAndtime">
