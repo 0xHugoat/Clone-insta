@@ -120,7 +120,7 @@ if (!$user_post) {
 
             <div class="bouttonRouge">
                 <a href="deconnexion.php">Se déconnecter</a> <!--boutton pour se deconnecter et le redirige sur les inscriptions -->
-                <a href="./inscription.php">Supprimer le compte</a> <!--boutton pour supprimer le compte et le redirige sur les inscriptions /////    name:supprimerCompte -->
+                <a href="delete-compte.php">Supprimer le compte</a> <!--boutton pour supprimer le compte et le redirige sur les inscriptions /////    name:supprimerCompte -->
             </div>
 
             <div class="enregistrerInformations">

@@ -65,15 +65,24 @@
             <?php
                 $request = $db->query('SELECT * FROM posts WHERE id_utilisateur = '. $_SESSION['utilisateurs_id']);
                 $posts = $request->fetchAll();
-
-                foreach ($posts as $post) {
+                
+                if ($posts) {
+                    foreach ($posts as $post) {
+                        echo '
+                                <a href="?post='.$post["id"].'" class="card-post">
+                                    <img src="'. $post["photo"] .'" alt="image">
+                                </a>
+                        ';
+                    }
+                } else {
                     echo '
-                            <a href="?post='.$post["id"].'" class="card-post">
-                                <img src="'. $post["photo"] .'" alt="image">
-                            </a>
+                        <div class="no-post">
+                            <img class="no-post-img" src="assets/Camera.png" alt="image">
+                            <p class="no-post-tittle">Partager des photos</p>
+                            <p class="no-post-text">Lorsque vous partagez des photos, elles apparaissent sur votre profil.</p>
+                        </div>
                     ';
                 }
-
             ?>
         </div>
     </section>

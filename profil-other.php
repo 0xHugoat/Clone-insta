@@ -25,7 +25,7 @@
     <div id="menu" class="menu">
         <nav>
             <a class="menu_choices" href="./home.php"><img src="assets/Home.png" alt="home"><p>Acceuil</p></a>
-            <a class="menu_choices" href=""><img src="assets/Profile.png" alt="home"><p>Profil</p></a>
+            <a class="menu_choices" href="profil.php"><img src="assets/Profile.png" alt="home"><p>Profil</p></a>
             <a class="menu_choices" href="create-post.php"><img src="assets/Create.png" alt="home"><p>Créer</p></a>
         </nav>
     </div>
@@ -65,11 +65,20 @@
                 $request = $db->query('SELECT * FROM posts WHERE id_utilisateur = '. $_SESSION['id_other']);
                 $posts = $request->fetchAll();
 
-                foreach ($posts as $post) {
+                if ($posts) {
+                    foreach ($posts as $post) {
+                        echo '
+                                <a href="?post='.$post["id"].'" class="card-post">
+                                    <img src="'. $post["photo"] .'" alt="image">
+                                </a>
+                        ';
+                    }
+                } else {
                     echo '
-                            <a href="?post='.$post["id"].'" class="card-post">
-                                <img src="'. $post["photo"] .'" alt="image">
-                            </a>
+                        <div class="no-post">
+                            <img class="no-post-img" src="assets/Camera.png" alt="image">
+                            <p class="no-post-tittle">Cette personne n\'a pas encore partager de photos</p>
+                        </div>
                     ';
                 }
 
