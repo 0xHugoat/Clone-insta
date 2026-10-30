@@ -444,6 +444,23 @@ hr {
   color: #858585;
   white-space: nowrap;
 }
+.no-post {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .no-post-img {
+        width: 90px;
+        height: 90px;
+    }
+    .no-post-tittle {
+        font-size: 24px;
+        font-weight: 800;
+    }
+    .no-post-text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
 @media (max-width: 768px) {
   .headMenu {
     flex-direction: column;

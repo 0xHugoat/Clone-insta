@@ -6,6 +6,10 @@
 
         $description = trim($_POST['modifierBio'] ?? '');
 
+        if ($_FILES['modifierPhoto']['error'] === UPLOAD_ERR_NO_FILE) {
+            die("Veuillez sélectionner une photo.");
+        }
+
         // Ajout du post
         $nom = $_FILES['modifierPhoto']['name'];
         $tmp = $_FILES['modifierPhoto']['tmp_name'];
