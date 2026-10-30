@@ -461,6 +461,15 @@ hr {
         font-weight: 500;
     }
 }
+.editPost {
+    text-decoration: none;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+}
 @media (max-width: 768px) {
     .headMenu {
         flex-direction: column;
