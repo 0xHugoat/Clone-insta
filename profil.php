@@ -9,7 +9,11 @@
 
     if (isset($_GET["post"])) {
         $_SESSION["id_post"] = (int)$_GET["post"];
-        header('Location: post.php');
+        if (isset($_GET["modif"])) {
+            header('Location: modification-post.php');
+        } else {
+            header('Location: post.php');
+        }
     }
 
 ?>
@@ -67,13 +71,21 @@
                 $posts = $request->fetchAll();
                 
                 if ($posts) {
+                    if (isset($_GET["modif"])) {
+                        $editornot = "&modif=edit";
+                    } else {
+                        $editornot = "";
+                    }
                     foreach ($posts as $post) {
                         echo '
-                                <a href="?post='.$post["id"].'" class="card-post">
+                                <a href="?post='.$post["id"].''.$editornot.'" class="card-post">
                                     <img src="'. $post["photo"] .'" alt="image">
                                 </a>
                         ';
                     }
+                    echo '
+                            <a href="?modif=edit" class="editPost">✏️</a>
+                        ';
                 } else {
                     echo '
                         <div class="no-post">
