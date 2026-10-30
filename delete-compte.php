@@ -8,6 +8,6 @@
     $_SESSION = [];
     session_destroy();
 
-    header('Location: connexion.php');
+    header('Location: inscription.php');
     exit();
 ?>
