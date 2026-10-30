@@ -10,6 +10,25 @@ if (!isset($_SESSION['utilisateurs_id'])) {
 
 $id = $_SESSION['utilisateurs_id'];
 
+// Récupérer les informations du profil
+$request = $db->prepare("
+    SELECT profils.*, utilisateurs.pseudo
+    FROM profils
+    INNER JOIN utilisateurs
+    ON profils.id_utilisateur = utilisateurs.id
+    WHERE profils.id_utilisateur = :id
+");
+
+$request->execute([
+    ':id' => $id
+]);
+
+$user_post = $request->fetch();
+
+if (!$user_post) {
+    exit("Profil introuvable.");
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $pseudo = trim($_POST['modifierPseudo'] ?? '');
@@ -24,9 +43,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tmp = $_FILES['modifierPhoto']['tmp_name'];
     $destination = "uploads/" . $nom;
 
+    if ($_FILES['modifierPhoto']['error'] === UPLOAD_ERR_NO_FILE) {
+        $destination = $user_post["photo"];
+    }
+
     move_uploaded_file($tmp, $destination);
 
-    $request = $db->query("UPDATE profils SET photo = '$destination'");
+    $request = $db->query("UPDATE profils SET photo = '$destination' WHERE id_utilisateur = '$id'");
 
     // Modifier le pseudo
     $sql = "UPDATE utilisateurs SET pseudo = :pseudo WHERE id = :id";
@@ -50,25 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     header('Location: modification-profil.php');
     exit();
-}
-
-// Récupérer les informations du profil
-$request = $db->prepare("
-    SELECT profils.*, utilisateurs.pseudo
-    FROM profils
-    INNER JOIN utilisateurs
-    ON profils.id_utilisateur = utilisateurs.id
-    WHERE profils.id_utilisateur = :id
-");
-
-$request->execute([
-    ':id' => $id
-]);
-
-$user_post = $request->fetch();
-
-if (!$user_post) {
-    exit("Profil introuvable.");
 }
 
 ?>
