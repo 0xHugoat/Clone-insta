@@ -569,3 +569,137 @@ hr {
 .auth-box a:hover {
   text-decoration: underline;
 }
+}
+
+/* RESPONSIVE : ajouts uniquement, styles ordinateur conservés */
+@media (max-width: 1024px) {
+  .headMenu {
+     width: min(700px, calc(100% - 140px));
+     }
+     
+  .profil section {
+     width: calc(100% - 150px); margin-left: 110px;
+     }
+
+  .profil-user {
+     width: 100%; height: auto; min-height: 220px;
+     }
+
+  .post .post_all {
+     gap: 24px;
+     }
+
+  .post .img_post {
+     max-width: 48%; height: auto; max-height: 80vh;
+     }
+
+  .post .post-description-all {
+     margin-left: 0; width: 52%; min-width: 0;
+     }
+
+  .modifierPhoto, .textAreaBio textarea, .mofidierPseudo input,
+  .enregistrerInformations input { 
+    width: 65%;
+   }
+
+  .bouttonRouge a {
+     width: 30%;
+     }
+
+  .headTitreModif { 
+    margin-left: 18%;
+   }
+}
+
+@media (max-width: 840px) {
+  body { overflow-x: hidden; }
+  .menu {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    height: 64px;
+    width: 100%;
+    background: #0c1014;
+    border-top: 1px solid #30343a;
+    z-index: 100;
+    justify-content: center;
+  }
+  .menu nav { width: 100%; flex-direction: row; justify-content: space-around; align-items: center; gap: 5px; }
+  .menu .menu_choices { gap: 5px; flex-direction: column; font-size: 11px; font-weight: 600; }
+  .menu .menu_choices img { width: 23px; height: 23px; object-fit: contain; }
+  .menu .menu_choices p { margin: 0; }
+  .home, .profil { padding-bottom: 80px; }
+  .profil section { width: calc(100% - 32px); margin: 0 auto; }
+  .profil-user { width: 100%; min-height: 0; margin: 22px 0; }
+  .profil-user p { font-size: 15px; }
+  .profil-user .pseudo { font-size: 22px; }
+  .profil-user .profil-user-stats { gap: 12px; flex-wrap: wrap; }
+  .profil-user .mid-stat { margin: 0; }
+  .image { width: 90px; height: 90px; margin: 10px 16px 10px 0; flex-shrink: 0; }
+  .posts-user { gap: 3px; }
+  .posts-user .card-post { width: calc((100% - 6px) / 3); }
+  .posts-user img { display: block; }
+  .no-post { text-align: center; padding: 25px 12px; }
+  .no-post .no-post-text { font-size: 15px; }
+  .editPost { right: 20px; bottom: 85px; }
+  .headMenu { width: calc(100% - 32px); max-width: none; margin: 22px auto 25px; gap: 14px; }
+  .headMenu h1 { font-size: 19px; }
+  .profil-user-stats { gap: 14px; }
+  .profil-user-stats h2 { font-size: 16px; }
+  .profil-user-stats p { font-size: 12px; }
+  .profil-user-stats .bold-text { font-size: 15px; }
+  .feed { gap: 35px; padding-bottom: 30px; }
+  .publication { width: min(500px, calc(100% - 32px)); max-width: none; }
+  .card-post-home img { height: auto; aspect-ratio: 4 / 5; }
+  .publication-info { gap: 8px; flex-wrap: wrap; }
+  .publication-pseudo { font-size: 14px; }
+  .nbLike { font-size: 13px; }
+  .publication-date { font-size: 11px; }
+  .post { overflow: visible; }
+  .post .post_all { flex-direction: column; margin: 10px 0; gap: 18px; }
+  .post .img_post { max-width: 100%; width: 100%; height: auto; max-height: none; object-fit: contain; }
+  .post .post-description-all { width: 100%; margin-left: 0; }
+  .post img.user { width: 52px; height: 52px; }
+  .post .description-post { margin-left: 0; }
+  .post .likeAndtime { flex-wrap: wrap; gap: 8px; }
+  .post hr, .post .comment_area { width: 100%; }
+  .post .comment_area { height: auto; }
+  .post .comments { max-height: 300px; min-height: 100px; }
+  .post .write_comment { display: flex; align-items: center; gap: 8px; margin-top: 15px; }
+  .post .write_comment .texte { min-width: 0; flex: 1; width: auto; box-sizing: border-box; }
+  .post .write_comment .submit { flex-shrink: 0; }
+  .headTitreModif { margin: 20px 16px 30px; align-items: center; }
+  .headTitreModif img { padding: 10px; }
+  .titreSettings { font-size: 22px; }
+  .modifierPhoto, .textAreaBio textarea, .mofidierPseudo input,
+  .enregistrerInformations input { width: min(520px, calc(100% - 32px)); }
+  .modifierPhoto { padding: 16px; gap: 10px; }
+  .modifierPhoto img { width: 45px; height: 45px; margin-right: 0; flex-shrink: 0; }
+  .modifierPhoto h2 { font-size: 16px; overflow-wrap: anywhere; }
+  .btnPhoto { padding: 10px; font-size: 12px; }
+  .bouttonRouge { gap: 12px; padding: 0 16px; box-sizing: border-box; }
+  .bouttonRouge a { width: min(254px, 50%); text-align: center; font-size: 13px; padding: 0 6px; box-sizing: border-box; }
+  .textAreaBio, .mofidierPseudo, .modifierPhoto, .bouttonRouge { margin-bottom: 30px; }
+  .auth-container { padding: 16px; }
+  .auth-box { width: 100%; max-width: 400px; padding: 28px 22px; }
+}
+
+@media (max-width: 480px) {
+  .headMenu { align-items: flex-start; }
+  .headMenu h1 { font-size: 18px; }
+  .headMenu .profil-user-stats { width: 100%; justify-content: space-between; gap: 8px; }
+  .headMenu .profil-user-stats h2 { font-size: 14px; }
+  .profil-user .profil-user-img { align-items: flex-start; }
+  .profil-user .profil-user-stats { gap: 9px; }
+  .profil-user .profil-user-stats p { font-size: 12px; }
+  .image { width: 72px; height: 72px; }
+  .publication-avatar { width: 28px; height: 28px; }
+  .likeImg { width: 24px; height: 24px; }
+  .post section { padding: 12px; }
+  .post .each_comment { align-items: flex-start; }
+  .post .each_comment .details { flex-wrap: wrap; }
+  .modifierPhoto { flex-wrap: wrap; }
+  .modifierPhoto .btnPhoto { margin-left: auto; }
+  .titreSettings { font-size: 18px; }
+  .bouttonRouge a { font-size: 11px; }
+}
