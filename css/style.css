@@ -499,7 +499,6 @@ hr {
   padding: 20px;
   box-sizing: border-box;
 }
-
 .auth-box {
   background-color: #191d22;
   width: 400px;
@@ -509,26 +508,22 @@ hr {
   border-radius: 15px;
   box-sizing: border-box;
 }
-
 .auth-box h1 {
   color: white;
   font-size: 26px;
   font-weight: 600;
   margin: 0 0 35px;
 }
-
 .auth-box form {
   display: flex;
   flex-direction: column;
 }
-
 .auth-box label {
   color: #e7e7e7;
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 10px;
 }
-
 .auth-box input {
   background-color: #0c1014;
   color: white;
@@ -542,15 +537,12 @@ hr {
   margin-bottom: 25px;
   box-sizing: border-box;
 }
-
 .auth-box input:focus {
   border-color: #4b5cff;
 }
-
 .auth-box input::placeholder {
   color: #777f89;
 }
-
 .auth-box button {
   background: #833ab4;
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
@@ -563,20 +555,17 @@ hr {
   font-weight: 600;
   cursor: pointer;
 }
-
 .auth-box p {
   color: #a0a0a0;
   font-size: 13px;
   text-align: center;
   margin: 25px 0 0;
 }
-
 .auth-box a {
   color: #8290ff;
   font-weight: 600;
   text-decoration: none;
 }
-
 .auth-box a:hover {
   text-decoration: underline;
 }
